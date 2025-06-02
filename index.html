@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marpy cinta kalam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔮HAHAHA TUAA🔮</h1>
+        <p>COBA INPUT NAMA KAW DI BAWAH</p>
+        <input type="text" id="nama" placeholder="Input di sini">
+        <button onclick="ramal()">COBA PENCET</button>
+        <div id="hasil" class="ramalan-box"></div>
+    </div>
+
+    <script>
+        function ramal() {
+            const nama = document.getElementById('nama').value.trim();
+            const hasil = document.getElementById('hasil');
+
+            if (nama === "") {
+                hasil.innerHTML = "<p>KETIK DULU NAMA KAW KOCAK</p>";
+                return;
+            }
+
+            const ramalan = [
+                "HABEDE MA BRO. COBA PENCET LAGI.",
+                "Mau aja pencet2 kocak awkawk. coba pencet lagi"
+            ];
+
+            const index = Math.floor(Math.random() * ramalan.length);
+            hasil.innerHTML = `
+                <h2>Halo, ${nama}!</h2>
+                <p>${ramalan[index]}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
